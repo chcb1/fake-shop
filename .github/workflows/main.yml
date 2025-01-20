@@ -14,10 +14,10 @@ jobs:
       - name: Autenticar no Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
-      - name: Envio da Imagem Docker
+
+      - name: Envio da Imagem Dockerx
         run: echo "Executando o comando Docker push"
 
   cd:
