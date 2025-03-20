@@ -1,0 +1,22 @@
+name: CI-CD Fake
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Checkout"
+      - run: echo " Build"
+      - run: echo " Test"
+
+  CD:
+    needs: [CI]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Test"
+      - run: echo " Deploy"
